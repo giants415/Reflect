@@ -13,4 +13,8 @@ module SessionsHelper
       redirect_to new_session_path
     end
   end
+
+  def logout
+    @current_user = session[:user_id] = nil
+  end
 end
