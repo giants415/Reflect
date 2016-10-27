@@ -6,6 +6,8 @@ Welcome <%= @user.username %>
 <br>
 Email: <%= @user.email %>
 <br>
+<%= button_to "Edit Profile", edit_user_path, method: "get" %>
+<br>
 <%= link_to "Log Out", logout_path %>
 
 <br>
@@ -16,6 +18,8 @@ Email: <%= @user.email %>
 Title: <%= post.title %>
 <br>
 Post Body: <%= post.content %>
+<br>
+<%= button_to "Edit Post", edit_post_path(post.id), method: "get" %>
 <hr>
 
 <% end %>
