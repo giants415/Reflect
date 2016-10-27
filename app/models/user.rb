@@ -6,4 +6,8 @@ class User < ApplicationRecord
     @user = User.find_by({username: params[:username]})
     @user.try(:authenticate, params[:password])
   end
+
+  validates :email, uniqueness:true
+  validates :username, uniqueness:true
+
 end
