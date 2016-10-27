@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  include SessionsHelper
+
   def index
     @posts = Post.all
   end
@@ -9,7 +11,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params)
-    redirect_to @user
+    redirect_to user_path(@post.user_id)
   end
 
   def show
@@ -34,7 +36,8 @@ class PostsController < ApplicationController
 
   private
     def post_params
-      post_params = params.require(:post).permit(:title, :content)
+      post_info = params.require(:post).permit(:title, :content)
+      post_params = post_info.merge({user_id: current_user.id})
     end
 
     def post_id
