@@ -7,3 +7,15 @@ Welcome <%= @user.username %>
 Email: <%= @user.email %>
 <br>
 <%= link_to "Log Out", logout_path %>
+
+<br>
+<br>
+
+<% @posts.each do |post| %>
+
+Title: <%= post.title %>
+<br>
+Post Body: <%= post.content %>
+<hr>
+
+<% end %>
