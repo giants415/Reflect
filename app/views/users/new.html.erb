@@ -1,5 +1,9 @@
 <h3>Sign Up</h3>
 
+<div>
+  <h2><%= flash[:error] %></h2>
+</div>
+
 <%= form_for @user do |f| %>
   <div>
     <%= f.text_field :username, placeholder: "Choose a username" %>
