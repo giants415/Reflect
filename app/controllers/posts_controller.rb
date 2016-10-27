@@ -11,12 +11,10 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params)
-    counter = WordsCounted.count(@post.content)
+    counter = WordsCounted.count(@post.content, {exclude: "enim"})
     @post.words_counted = counter.token_count
     @post.words_freq = counter.token_frequency
     @post.save
-    # counter.token_count
-    # counter.token_frequency
     redirect_to user_path(@post.user_id)
   end
 
