@@ -13,7 +13,7 @@ class PostsController < ApplicationController
     @post = Post.create(post_params)
     counter = WordsCounted.count(@post.content)
     @post.words_counted = counter.token_count
-    @post.word_freq = count.token_frequency
+    @post.words_freq = counter.token_frequency
     @post.save
     # counter.token_count
     # counter.token_frequency
