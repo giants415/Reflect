@@ -1,0 +1,10 @@
+<%= form_for @post do |f| %>
+  <div>
+    <%= f.text_field :title, placeholder: "Title your post" %>
+  </div>
+  <div>
+    <p>Write your post here</p>
+    <%= f.text_area :content %>
+  </div>
+  <%= f.submit "Submit"%>
+<% end %>
