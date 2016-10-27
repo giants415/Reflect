@@ -2,16 +2,13 @@
 
 <%= form_for @user do |f| %>
   <div>
-    <span class="label label-default"></span><%= f.text_field :username, placeholder: "Choose a username" %>
+    <%= f.text_field :username, placeholder: "Choose a username" %>
   </div>
-  <br>
   <div>
-    <span class="label label-default"></span><%= f.text_field :email, placeholder: "Enter your email" %>
+    <%= f.text_field :email, placeholder: "Enter your email" %>
   </div>
-  <br>
   <div>
-    <span class="label label-default"></span><%= f.password_field :password, placeholder: "Choose a password" %>
+    <%= f.password_field :password, placeholder: "Choose a password" %>
   </div>
-  <br>
-  <div class="userSubmitButton"><%= f.submit "Submit"%></div>
+  <%= f.submit "Submit"%>
 <% end %>
