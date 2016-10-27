@@ -11,10 +11,12 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params)
-    debugger
     counter = WordsCounted.count(@post.content)
-    counter.token_count
-    counter.token_frequency
+    @post.words_counted = counter.token_count
+    @post.word_freq = count.token_frequency
+    @post.save
+    # counter.token_count
+    # counter.token_frequency
     redirect_to user_path(@post.user_id)
   end
 
@@ -40,7 +42,7 @@ class PostsController < ApplicationController
 
   private
     def post_params
-      post_info = params.require(:post).permit(:title, :content)
+      post_info = params.require(:post).permit(:title, :content, :words_counted, :count)
       post_params = post_info.merge({user_id: current_user.id})
     end
 

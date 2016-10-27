@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161027220211) do
+ActiveRecord::Schema.define(version: 20161027234254) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20161027220211) do
     t.integer  "end_rating"
     t.integer  "user_id"
     t.integer  "words_counted"
+    t.string   "words_freq"
     t.index ["user_id"], name: "index_posts_on_user_id", using: :btree
   end
 
