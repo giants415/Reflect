@@ -8,8 +8,8 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post.create(post_params)
-    redirect_to posts_path
+    @post = Post.create(post_params)
+    redirect_to @user
   end
 
   def show
@@ -35,6 +35,10 @@ class PostsController < ApplicationController
   private
     def post_params
       post_params = params.require(:post).permit(:title, :content)
+    end
+
+    def post_id
+      params[:id]
     end
 
 end
