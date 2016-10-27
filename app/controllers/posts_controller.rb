@@ -11,7 +11,10 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params)
-    counter = WordsCounted.count (@post.content)
+    debugger
+    counter = WordsCounted.count(@post.content)
+    counter.token_count
+    counter.token_frequency
     redirect_to user_path(@post.user_id)
   end
 

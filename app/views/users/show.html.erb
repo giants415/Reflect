@@ -19,6 +19,8 @@ Title: <%= post.title %>
 <br>
 Post Body: <%= post.content %>
 <br>
+Words in this post: <%= post.words_counted %>
+<br>
 <%= button_to "Edit Post", edit_post_path(post.id), method: "get" %>
 <hr>
 
