@@ -13,5 +13,6 @@ Rails.application.routes.draw do
   post '/users', to: 'users#create'
 
   get '/cloud', to: "word_cloud#index", as: 'word_cloud'
+  get '/cloud/data', to: "word_cloud#data", :defaults => { :format => 'json' }
 
 end
