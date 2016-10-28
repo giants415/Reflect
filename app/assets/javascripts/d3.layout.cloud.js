@@ -4,6 +4,7 @@
 
 console.log("word cloud JS");
 
+
 var frequency_list = [
         {"text":"Ben","size":95},
         {"text":"sexy","size":60},
@@ -44,7 +45,7 @@ function draw(words) {
     var orientation;
     var orientationArray = [randomizer(30), randomizer(-30), randomizer(30), randomizer(-30), randomizer(50) ];
 
-    d3.select(".wordCloud").append("svg")
+    d3.select(".wordcloud").append("svg")
             .attr("width", 850)
             .attr("height", 500)
             .attr("class", "wordcloud")
