@@ -49,3 +49,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'foundation-rails'
 gem 'words_counted'
 gem 'd3-rails'
+gem "browserify-rails"

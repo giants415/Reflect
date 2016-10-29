@@ -1,0 +1,20 @@
+{
+  "name": "Reflect",
+  "dependencies" : {
+    "browserify": "~10.2.4",
+    "browserify-incremental": "^3.0.1",
+    "d3-dispatch": "0.2.x"
+
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">= 0.10"
+  },
+  "main": "index.js",
+   "scripts": {
+     "build": "mkdir -p build && browserify --standalone d3.layout.cloud index.js > build/d3.layout.cloud.js"
+  },
+  "devDependencies": {
+    "browserify": "^11.2.0"
+  }
+}

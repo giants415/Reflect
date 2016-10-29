@@ -4,58 +4,45 @@
 
 console.log("word cloud JS");
 
-$.ajax({
-           type: "GET",
-           contentType: "application/json; charset=utf-8",
-           url: 'data',
-           dataType: 'json',
-           success: function (data) {
-               draw(data);
-           },
-           error: function (result) {
-               error();
-           }
-       });
+var d3 = require("d3.js"),
+    cloud = require("d3.layout.cloud.js");
+    console.log("word cloud JS 2");
 
-function draw(data) {
-    var color = d3.scale.category20b();
-    var width = 420,
-        barHeight = 20;
+var fill = d3.scale.category20();
 
-    var x = d3.scale.linear()
-        .range([0, width])
-        .domain([0, d3.max(data)]);
+var layout = cloud()
+    .size([500, 500])
+    .words([
+      "Hello", "world", "normally", "you", "want", "more", "words",
+      "than", "this"].map(function(d) {
+      return {text: d, size: 10 + Math.random() * 90, test: "haha"};
+    }))
+    .padding(5)
+    .rotate(function() { return ~~(Math.random() * 2) * 90; })
+    .font("Impact")
+    .fontSize(function(d) { return d.size; })
+    .on("end", draw);
 
-    var chart = d3.select("#graph")
-        .attr("width", width)
-        .attr("height", barHeight * data.length);
+    console.log("word cloud JS 3");
+layout.start();
+console.log("word cloud JS 4 " + layout);
 
-    var bar = chart.selectAll("g")
-        .data(data)
-        .enter().append("g")
-        .attr("transform", function (d, i) {
-                  return "translate(0," + i * barHeight + ")";
-              });
-
-    bar.append("rect")
-        .attr("width", x)
-        .attr("height", barHeight - 1)
-        .style("fill", function (d) {
-                   return color(d)
-               })
-
-    bar.append("text")
-        .attr("x", function (d) {
-                  return x(d) - 10;
-              })
-        .attr("y", barHeight / 2)
-        .attr("dy", ".35em")
-        .style("fill", "white")
-        .text(function (d) {
-                  return d;
-              });
-}
-
-function error() {
-    console.log("error")
+function draw(words) {
+  console.log(words)
+  var target  = d3.select("target");
+  console.log (target)
+  d3.select("#target").append("svg")
+      .attr("width", layout.size()[0])
+      .attr("height", layout.size()[1])
+    .append("g")
+      .attr("transform", "translate(" + layout.size()[0] / 2 + "," + layout.size()[1] / 2 + ")")
+    .selectAll("text")
+      .data(words)
+    .enter().append("text")
+      .style("font-size", function(d) { return d.size + "px"; })
+      .style("font-family", "Impact")
+      .style("fill", function(d, i) { return fill(i); })
+      .attr("text-anchor", "middle")
+      .attr("transform", function(d) { return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";})
+      .text(function(d) { return d.text; });
 }
