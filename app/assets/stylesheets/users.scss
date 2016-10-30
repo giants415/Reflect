@@ -1,6 +1,10 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import url('https://fonts.googleapis.com/css?family=Rock+Salt|Courgette');
+$quote: 'Courgette', sans-serif;
+$author: 'Rock Salt', sans-serif;
+
 
 body {
   background-color: #75A1D0;
@@ -9,7 +13,15 @@ body {
 
 #top-block{
   background-color: rgba(0,0,0,.4);
-  padding-top: 1em;
+  max-height: 21em;
+    .carousel-item{
+       color: white;
+       padding: 0 1em;
+       font-family: $quote;
+       p {
+         font-size: 2.5em;
+       }
+    }
 }
 
 #login {
