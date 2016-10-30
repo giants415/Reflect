@@ -1,18 +1,31 @@
-<h3>Sign Up</h3>
+  <div id="top-block" class = "center-align">
+    <div class="carousel carousel-slider">
+      <p class="carousel-item">“Sometimes you will never know the value of a moment until it becomes a memory.” -Dr. Seuss</p>
+      <p class="carousel-item">“Keep a notebook. Travel with it, eat with it, sleep with it. Slap into it every stray thought that flutters up into your brain. Cheap paper is less perishable than gray matter. And lead pencil markings endure longer than memory.” - Jack London</p>
+      <p class="carousel-item">“Just write every day of your life. Then see what happens.” - Ray Bradbury</p>
+      <p class="carousel-item">"“Never forget that writing is as close as we get to keeping a hold on the thousand and one things—childhood, certainties, cities, doubts, dreams, instants, phrases, parents, loves—that go on slipping like sand through our fingers.”- Salaman Rushdie"</p>
+    </div>
+  </div>
 
-<div>
-  <h2><%= flash[:error] %></h2>
+<div class = "container">
+  </div>
+  <div>
+    <h2><%= flash[:error] %></h2>
+  </div>
+  <div class = "row">
+      <h3 class = "center-align">Sign Up</h3>
+    <div id="login" class = "col l6 m6 s6 offset-l3 z-depth-1"
+      <%= form_for @user do |f| %>
+        <div>
+          <%= f.text_field :username, placeholder: "Choose a username" %>
+        </div>
+        <div>
+          <%= f.text_field :email, placeholder: "Enter your email" %>
+        </div>
+        <div>
+          <%= f.password_field :password, placeholder: "Choose a password" %>
+        </div>
+      <%= f.submit "Submit"%>
+    <% end %>
+  </div>
 </div>
-
-<%= form_for @user do |f| %>
-  <div>
-    <%= f.text_field :username, placeholder: "Choose a username" %>
-  </div>
-  <div>
-    <%= f.text_field :email, placeholder: "Enter your email" %>
-  </div>
-  <div>
-    <%= f.password_field :password, placeholder: "Choose a password" %>
-  </div>
-  <%= f.submit "Submit"%>
-<% end %>

@@ -1,3 +1,19 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  background-color: #75A1D0;
+}
+
+
+#top-block{
+  background-color: rgba(0,0,0,.4);
+  padding-top: 1em;
+}
+
+#login {
+  border-radius: 15px 50px 30px 5px;
+  background-color: #d9d9d9;
+  padding: 2em;
+}
