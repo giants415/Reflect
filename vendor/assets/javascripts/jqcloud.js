@@ -9,7 +9,6 @@
  * Date: 2013-05-09 18:54:22 +0200
 */
 
-console.log("jqcloud lib");
 
 (function( $ ) {
   "use strict";
