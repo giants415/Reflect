@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   include SessionsHelper
 
   def index
-    @posts = Post.all
+    @posts = Post.where(user_id: params[:post_id])
   end
 
   def new
