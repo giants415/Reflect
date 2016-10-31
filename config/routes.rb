@@ -2,8 +2,9 @@ Rails.application.routes.draw do
   root to: "users#new"
 
 
-  resources :users
-  resources :posts
+  resources :users do
+    resources :posts
+  end
 
   get "/login", to: "sessions#new", as: 'new_session'
   post "/sessions", to: "sessions#create"
