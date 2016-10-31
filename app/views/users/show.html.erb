@@ -23,6 +23,7 @@ Words in this post: <%= post.words_counted %>
 <br>
 Word Frequency: <%= post.words_freq %>
 <br>
+<%= button_to "Cloudify", cloud_path(:user_id => @user.id, :post_id => post.id), method: :get%>
 <hr>
 
 <% end %>

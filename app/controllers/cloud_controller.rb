@@ -4,10 +4,10 @@ class CloudController < ApplicationController
     @posts = Post.where(id: params[:post_id])
   end
 
-  # private
+  private
 
-  # def post_id
-  #   params[:id]
-  # end
+  def user_id
+    params[:id]
+  end
 
 end
