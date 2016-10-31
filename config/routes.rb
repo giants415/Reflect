@@ -12,5 +12,5 @@ Rails.application.routes.draw do
   get '/signup', to: "users#new"
   post '/users', to: 'users#create'
 
-  get '/cloud', to: "cloud#index", as: "cloud"
+  get 'users/:user_id/posts/:post_id/cloud', to: "cloud#index", as: "cloud"
 end
