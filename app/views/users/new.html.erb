@@ -19,25 +19,35 @@
     </div>
   </div>
 
-<div class = "container">
+  <div class = "container">
+    <div>
+      <h2><%= flash[:error] %></h2>
+    </div>
+    <div class = "row">
+      <h3 class = "center-align">Join Reflect</h3>
+      <br>
+      <div id="login" class = "col l6 m6 s6 offset-l3 z-depth-1"
+        <%= form_for @user do |f| %>
+          <div class = "input-field">
+            <%= f.text_field :email, type: "text", class: "validate"%>
+            <label for="email">Enter your email</label>
+          </div>
+          <div class = "input-field">
+            <%= f.text_field :username, type: "text", class: "validate"%>
+            <label for="username">Choose a username</label>
+          </div>
+          <div class = "input-field">
+            <%= f.password_field :password, type: "password", class: "validate"%>
+            <label for="email">Choose a password</label>
+          </div>
+          <%= f.submit "Submit", class: "waves-effect waves-light btn"%>
+        <% end %>
+      </div>
+    </div>
+    <br>
   </div>
-  <div>
-    <h2><%= flash[:error] %></h2>
+  <div class = "row" id="reflect-info">
+    <h4 class = "center-align">What is Reflect?</h4>
+    <br>
+    <span class = "center-align">Reflect allows you to create your own personal space for your ideas. </span>
   </div>
-  <div class = "row">
-      <h3 class = "center-align">Sign Up</h3>
-    <div id="login" class = "col l6 m6 s6 offset-l3 z-depth-1"
-      <%= form_for @user do |f| %>
-        <div>
-          <%= f.text_field :username, placeholder: "Choose a username" %>
-        </div>
-        <div>
-          <%= f.text_field :email, placeholder: "Enter your email" %>
-        </div>
-        <div>
-          <%= f.password_field :password, placeholder: "Choose a password" %>
-        </div>
-      <%= f.submit "Submit"%>
-    <% end %>
-  </div>
-</div>

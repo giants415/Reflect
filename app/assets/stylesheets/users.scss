@@ -13,14 +13,14 @@ body {
 
 #top-block{
   background-color: rgba(0,0,0,.4);
-  max-height: 21em;
+  margin-bottom: 6em;
     .carousel-item{
-       color: white;
-       padding: 0 1em;
-       font-family: $quote;
-       p {
-         font-size: 2.5em;
-       }
+      color: white;
+      padding: 0 1em;
+      font-family: $quote;
+        p {
+          font-size: 2.5em;
+        }
     }
 }
 
@@ -28,4 +28,16 @@ body {
   border-radius: 15px 50px 30px 5px;
   background-color: #d9d9d9;
   padding: 2em;
+    div input{
+      background-color: rgba(255, 255, 255, .4);
+    }
+}
+
+#reflect-info {
+  margin: 6em 0;
+  padding-top: 1em;
+  background-color: rgba(0,0,0,.4);
+    h4{
+      text-decoration: underline;
+    }
 }
