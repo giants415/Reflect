@@ -1,3 +1,11 @@
 <h2>Word Cloud Zone</h2>
 
 <div id= "target" style="width: 1px; height: 1px;"></div>
+
+<% @posts.each do |post| %>
+
+Title: <%= post.title %>
+<br>
+Post Body: <%= post.content %>
+
+<% end %>
