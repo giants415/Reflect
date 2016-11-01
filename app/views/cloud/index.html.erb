@@ -1,11 +1,16 @@
-<h2>Word Cloud Zone</h2>
+<div class = "container">
+  <div class = "row">
+    <div class = "col l12 center-align">
 
-<div id= "target" style="width: 500px; height: 500px;"></div>
+      <div id= "target" style="width: 1000px; height: 1000px;"></div>
 
-<script type = "text/javascript">
-  var word_array = <%= raw @posts.first.words_freq.to_json %> ;
-  word_array = JSON.parse(word_array);
-  $(function() {
-    $("#target").jQCloud(word_array);
-  });
-</script>
+      <script type = "text/javascript">
+        var word_array = <%= raw @posts.first.words_freq.to_json %> ;
+        word_array = JSON.parse(word_array);
+        $(function() {
+          $("#target").jQCloud(word_array);
+        });
+      </script>
+    </div>
+  </div>
+</div>
