@@ -1,0 +1,11 @@
+<% @posts.each do |post| %>
+
+Title: <%= post.title %>
+<br>
+Post Body: <%= post.content %>
+<br>
+Words in this post: <%= post.words_counted %>
+<br>
+Word Frequency: <%= post.words_freq %>
+<br>
+<% end %>
