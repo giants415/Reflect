@@ -1,16 +1,11 @@
 <div class = "container">
-  <div class = "row">
-    <div class = "col l12 center-align">
+  <div id= "target" class = "align-center" style="width: 750px; height: 750px;"></div>
 
-      <div id= "target" style="width: 1000px; height: 1000px;"></div>
-
-      <script type = "text/javascript">
-        var word_array = <%= raw @posts.first.words_freq.to_json %> ;
-        word_array = JSON.parse(word_array);
-        $(function() {
-          $("#target").jQCloud(word_array);
-        });
-      </script>
-    </div>
-  </div>
+  <script type = "text/javascript">
+    var word_array = <%= raw @posts.first.words_freq.to_json %> ;
+    word_array = JSON.parse(word_array);
+    $(function() {
+      $("#target").jQCloud(word_array);
+    });
+  </script>
 </div>
