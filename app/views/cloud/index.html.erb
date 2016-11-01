@@ -3,11 +3,9 @@
 <div id= "target" style="width: 500px; height: 500px;"></div>
 
 <script type = "text/javascript">
-var word_array = <%= raw @posts.first.words_freq.to_json %> ;
-console.log(word_array);
-word_array = JSON.parse(word_array);
-console.log(word_array);
-$(function() {
-$("#target").jQCloud(word_array);
-});
+  var word_array = <%= raw @posts.first.words_freq.to_json %> ;
+  word_array = JSON.parse(word_array);
+  $(function() {
+    $("#target").jQCloud(word_array);
+  });
 </script>
