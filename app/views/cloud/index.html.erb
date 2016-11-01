@@ -1,6 +1,17 @@
 <h2>Word Cloud Zone</h2>
 
-<div id= "target" style="width: 1px; height: 1px;"></div>
+<div id= "target" style="width: 500px; height: 500px;"></div>
+
+<script type = "text/javascript">
+var word_array = <%= raw @posts.first.words_freq.to_json %> ;
+console.log(word_array);
+word_array = JSON.parse(word_array);
+console.log(word_array);
+$(function() {
+$("#target").jQCloud(word_array);
+});
+</script>
+
 
 <% @posts.each do |post| %>
 

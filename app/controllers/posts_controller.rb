@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   include SessionsHelper
+  include PostsHelper
 
   def index
     @posts = Post.where(user_id: params[:post_id])
@@ -14,7 +15,8 @@ class PostsController < ApplicationController
     @post = Post.create(post_params)
     counter = WordsCounted.count(@post.content, {exclude: ->(t) {t.length < 3}})
     @post.words_counted = counter.token_count
-    @post.words_freq = counter.token_frequency
+    counter.token_frequency
+    @post.words_freq = wordCount_formatter(counter.token_frequency).to_json
     @post.save
     redirect_to user_path(@post.user_id)
   end
