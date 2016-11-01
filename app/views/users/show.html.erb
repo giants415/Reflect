@@ -19,7 +19,11 @@ Title: <%= post.title %>
 <br>
 Post Body: <%= post.content %>
 <br>
-<%= button_to "Edit Post", edit_post_path(post.id), method: "get" %>
+Words in this post: <%= post.words_counted %>
+<br>
+Word Frequency: <%= post.words_freq %>
+<br>
+<%= button_to "Cloudify", cloud_path(:user_id => @user.id, :post_id => post.id), method: :get%>
 <hr>
 
 <% end %>

@@ -1,18 +1,56 @@
-<h3>Sign Up</h3>
+  <div id="top-block" class = "center-align">
+    <div class="carousel carousel-slider">
+      <div class = "carousel-item col l8 m8 s8">
+        <p class = "quote">“Never forget that writing is as close as we get to keeping a hold on the thousand and one things—childhood, certainties, cities, doubts, dreams, instants, phrases, parents, loves—that go on slipping like sand through our fingers.”</p>
+        <p class = "author">Salaman Rushdie</p>
+      </div>
+      <div class = "carousel-item col l8 m8 s8">
+        <p class = "quote">“Sometimes you will never know the value of a moment until it becomes a memory.”</p>
+        <p class = "author">Dr. Seuss</p>
+      </div>
+      <div class = "carousel-item col l8 m8 s8">
+        <p class = "quote">“Keep a notebook. Travel with it, eat with it, sleep with it. Slap into it every stray thought that flutters up into your brain. Cheap paper is less perishable than gray matter. And lead pencil markings endure longer than memory.”</p>
+        <p class = "author">Jack London</p>
+      </div>
+      <div class = "carousel-item col l8 m8 s8">
+        <p class = "quote">“Just write every day of your life. Then see what happens.”</p>
+        <p class = "author">Ray Bradbury</p>
+      </div>
+    </div>
+  </div>
 
-<div>
-  <h2><%= flash[:error] %></h2>
-</div>
-
-<%= form_for @user do |f| %>
-  <div>
-    <%= f.text_field :username, placeholder: "Choose a username" %>
+  <div class = "container">
+    <div>
+      <h2><%= flash[:error] %></h2>
+    </div>
+    <div class = "row">
+      <h3 class = "center-align">Join Reflect</h3>
+      <br>
+      <div id="login" class = "col l6 m6 s6 offset-l3 z-depth-1">
+        <%= form_for @user do |f| %>
+          <div class = "input-field">
+            <%= f.text_field :email, type: "text", class: "validate"%>
+            <label for="email">Enter your email</label>
+          </div>
+          <div class = "input-field">
+            <%= f.text_field :username, type: "text", class: "validate"%>
+            <label for="username">Choose a username</label>
+          </div>
+          <div class = "input-field">
+            <%= f.password_field :password, type: "password", class: "validate"%>
+            <label for="email">Choose a password</label>
+          </div>
+          <%= f.submit "Submit", class: "waves-effect waves-light btn"%>
+        <% end %>
+      </div>
+    </div>
+    <br>
   </div>
-  <div>
-    <%= f.text_field :email, placeholder: "Enter your email" %>
+  <div class = "row" id="reflect-info">
+    <h4 class = "center-align">What is Reflect?</h4>
+    <br>
+    <p class = "center-align">Reflect is more than a simple place to keep a journal</p>
+    <p class = "center-align">You can create your own personal space for your thoughts and visualize the benefits of journaling</p>
+    <p class = "center-align">See your posts as a word cloud and keep track of how you feel before and after your entry</p>
+    <br>
   </div>
-  <div>
-    <%= f.password_field :password, placeholder: "Choose a password" %>
-  </div>
-  <%= f.submit "Submit"%>
-<% end %>

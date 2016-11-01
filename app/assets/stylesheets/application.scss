@@ -12,4 +12,14 @@
  *
  *= require_tree .
  *= require_self
+ *= require jqcloud
+ *= materialize.scss
  */
+
+  body {
+   background-color: #75A1D0;
+  }
+
+  nav, footer.page-footer  {
+    background-color: #6b7a8f;
+  }

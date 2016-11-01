@@ -1,0 +1,11 @@
+<div class = "container">
+  <div id= "target" class = "align-center" style="width: 750px; height: 750px;"></div>
+
+  <script type = "text/javascript">
+    var word_array = <%= raw @posts.first.words_freq.to_json %> ;
+    word_array = JSON.parse(word_array);
+    $(function() {
+      $("#target").jQCloud(word_array);
+    });
+  </script>
+</div>

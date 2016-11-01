@@ -1,16 +1,23 @@
 class PostsController < ApplicationController
   include SessionsHelper
+  include PostsHelper
 
   def index
-    @posts = Post.all
+    @posts = Post.where(user_id: params[:post_id])
   end
 
   def new
-    @post = Post.new
+    @user = User.find(params[:user_id])
+    @post = @user.posts.new
   end
 
   def create
     @post = Post.create(post_params)
+    counter = WordsCounted.count(@post.content, {exclude: ->(t) {t.length < 3}})
+    @post.words_counted = counter.token_count
+    counter.token_frequency
+    @post.words_freq = wordCount_formatter(counter.token_frequency).to_json
+    @post.save
     redirect_to user_path(@post.user_id)
   end
 
@@ -36,7 +43,7 @@ class PostsController < ApplicationController
 
   private
     def post_params
-      post_info = params.require(:post).permit(:title, :content)
+      post_info = params.require(:post).permit(:title, :content, :words_counted, :count)
       post_params = post_info.merge({user_id: current_user.id})
     end
 

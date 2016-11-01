@@ -13,4 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require materialize
+//= require materialize/extras/nouislider
+//= require jqcloud
 //= require_tree .
+$(document).ready(function(){
+
+});

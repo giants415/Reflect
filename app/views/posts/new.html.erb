@@ -1,4 +1,5 @@
-<%= form_for @post do |f| %>
+
+<%= form_for ([@user,@post]) do |f| %>
   <div>
     <%= f.text_field :title, placeholder: "Title your post" %>
   </div>
