@@ -21,6 +21,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by_id(user_id)
     @posts = Post.where(user_id: user_id)
+    @posts = @user.posts.page(params[:page]).per(1)
   end
 
   def edit
