@@ -27,7 +27,7 @@
     <br>
     Words in this post: <%= post.words_counted %>
     <br>
-    <%= button_to "Cloudify", cloud_path(:user_id => @user.id, :post_id => post.id), method: :get%>
+    <%= button_to "Cloudify", cloud_path(:user_id => @user.id, :post_id => post.id), class: "waves-effect waves-light btn", method: :get%>
     <hr>
 
     <% end %>
