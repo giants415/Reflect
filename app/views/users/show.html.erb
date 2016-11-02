@@ -1,29 +1,35 @@
 <div>
   <p><%= flash[:notice] %></p>
 </div>
+<div class = "container">
+  <div class = "row">
+    Welcome <%= @user.username %>
+    <br>
+    Email: <%= @user.email %>
+    <br>
+    <%= button_to "Edit Profile", edit_user_path, method: "get" %>
+    <br>
+    <%= link_to "Log Out", logout_path %>
+  </div>
+  
+  <div class = "row">
+    <% @posts.each do |post| %>
 
-Welcome <%= @user.username %>
-<br>
-Email: <%= @user.email %>
-<br>
-<%= button_to "Edit Profile", edit_user_path, method: "get" %>
-<br>
-<%= link_to "Log Out", logout_path %>
+    Title: <%= post.title %>
+    <br>
+    Post Body: <%= post.content %>
+    <br>
+    Words in this post: <%= post.words_counted %>
+    <br>
+    <%= button_to "Cloudify", cloud_path(:user_id => @user.id, :post_id => post.id), method: :get%>
+    <hr>
 
-<br>
-<br>
+    <% end %>
+  </div>
 
-<% @posts.each do |post| %>
 
-Title: <%= post.title %>
-<br>
-Post Body: <%= post.content %>
-<br>
-Words in this post: <%= post.words_counted %>
-<br>
-Word Frequency: <%= post.words_freq %>
-<br>
-<%= button_to "Cloudify", cloud_path(:user_id => @user.id, :post_id => post.id), method: :get%>
-<hr>
+  <br>
+  <br>
 
-<% end %>
+
+</div>
