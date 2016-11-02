@@ -3,12 +3,19 @@
 </div>
 <div class = "container">
   <div class = "row">
-    Welcome <%= @user.username %>
-    <br>
-    Email: <%= @user.email %>
-    <br>
-    <%= button_to "Edit Profile", edit_user_path, method: "get" %>
-    <br>
+    <div class = "col l4 m4 s4">
+      Welcome <%= @user.username %>
+      <%= button_to edit_user_path, method: "get", class: "fa fa-pencil-square-o" do %>
+        <i aria-hidden="true">Edit Profile</i>
+      <% end %>
+    </div>
+    <div class = "col l4 m4 s4">
+      <p>Number of Entries</p>
+      <%= Post.count %>
+    </div>
+    <div class = "col l4 m4 s4">
+      <p>test test test<p>
+    </div>
   </div>
 
   <div class = "row">
