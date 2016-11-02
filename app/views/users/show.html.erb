@@ -2,8 +2,9 @@
   <p><%= flash[:notice] %></p>
 </div>
 <div class = "container">
-  <div class = "row">
+  <div id = "user-dash" class = "row">
     <div class = "col l4 m4 s4">
+      <br>
       Welcome <%= @user.username %>
       <%= button_to edit_user_path, method: "get", class: "fa fa-pencil-square-o" do %>
         <i aria-hidden="true">Edit Profile</i>
@@ -17,11 +18,12 @@
       <% end %>
     </div>
     <div class = "col l4 m4 s4">
-      <p>test test test<p>
+      <p>Average Pre-Entry Rating: <p>
+      <p>Average Post-Entry Rating: <p>
     </div>
   </div>
 
-  <div class = "row">
+  <div id = "entry" class = "row">
     <% @posts.each do |post| %>
 
     Title: <%= post.title %>
