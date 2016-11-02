@@ -1,29 +1,48 @@
 <div>
   <p><%= flash[:notice] %></p>
 </div>
+<div class = "container">
+  <div id = "user-dash" class = "row">
+    <div class = "col l4 m4 s4">
+      <p>Welcome <%= @user.username %></p>
+      <%= button_to edit_user_path, method: "get", class: "fa fa-pencil-square-o" do %>
+        <i aria-hidden="true">Edit Profile</i>
+      <% end %>
+    </div>
+    <div class = "col l4 m4 s4">
+      <p>You have written <%= Post.count %> Reflections</p>
+      <%= button_to new_user_post_path(:user_id => @user.id), method: :get, class: "fa fa-pencil" do %>
+        <i aria-hidden="true">Write a Reflection</i>
+      <% end %>
+    </div>
+    <div class = "col l4 m4 s4">
+      <p>Average Pre-Entry Rating: <p>
+      <p>Average Post-Entry Rating: <p>
+    </div>
+  </div>
 
-Welcome <%= @user.username %>
-<br>
-Email: <%= @user.email %>
-<br>
-<%= button_to "Edit Profile", edit_user_path, method: "get" %>
-<br>
-<%= link_to "Log Out", logout_path %>
+    <div class = "center-align"><%= paginate @posts%></div>
 
-<br>
-<br>
+  <div id = "entry" class = "row">
+    <div class = "col l1 m1 s1">
+      <%= link_to_previous_page @posts, 'Previous Entry'%>
+    </div>
+    <div class = "col l10 m10 s10">
+      <% @posts.each do |post| %>
+      <p><%= post.title %></p>
+      <span><%= post.content %></span>
+      <br><br>
+      <%= button_to "Cloudify", cloud_path(:user_id => @user.id, :post_id => post.id), class: "waves-effect waves-light btn", method: :get%>
+      <% end %>
+    </div>
+    <div class = "col l1 m1 s1">
+      <%= link_to_next_page @posts, 'Next Entry'%>
+    </div>
+  </div>
 
-<% @posts.each do |post| %>
 
-Title: <%= post.title %>
-<br>
-Post Body: <%= post.content %>
-<br>
-Words in this post: <%= post.words_counted %>
-<br>
-Word Frequency: <%= post.words_freq %>
-<br>
-<%= button_to "Cloudify", cloud_path(:user_id => @user.id, :post_id => post.id), method: :get%>
-<hr>
+  <br>
+  <br>
 
-<% end %>
+
+</div>

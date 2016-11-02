@@ -1,19 +1,26 @@
 <div class = "container">
-  <h3>Log In</h3>
+  <div class = "row">
+    <h3 class = "center-align">Log In</h3>
 
-  <div>
-    <h2><%= flash[:error] %></h2>
+    <div>
+      <h2><%= flash[:error] %></h2>
+    </div>
+
+    <div id = "login" class = 'col l6 m6 s6 offset-l3 offset-m3 offset-s3 z-depth-1'>
+      <%= form_for @user, url: "/sessions", method: "post" do |f| %>
+        <div class = "input-field">
+          <%= f.text_field :username, type: "text", class: "validate center-align" %>
+          <label class = "center-align", for="username">Username</label>
+        </div>
+        <br>
+        <div class = "input-field">
+          <%= f.password_field :password, type: "password", class: "validate center-align"%>
+          <label class = "center-align", for="password" >Password</label>
+        </div>
+        <br>
+          <%= f.submit "Submit", class: "waves-effect waves-light btn"%>
+      <% end %>
+    </div>
+
   </div>
-
-  <%= form_for @user, url: "/sessions", method: "post" do |f| %>
-    <div>
-      <%= f.text_field :username, placeholder: "username" %>
-    </div>
-    <br>
-    <div>
-      <%= f.password_field :password, placeholder: "Password" %>
-    </div>
-    <br>
-      <%= f.submit "Submit"%>
-  <% end %>
 </div>
