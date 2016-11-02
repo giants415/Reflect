@@ -6,7 +6,7 @@
       <h2><%= flash[:error] %></h2>
     </div>
 
-    <div id = "login" class = 'col l6 m6 s6 offset-l3 z-depth-1'>
+    <div id = "login" class = 'col l6 m6 s6 offset-l3 offset-m3 offset-s3 z-depth-1'>
       <%= form_for @user, url: "/sessions", method: "post" do |f| %>
         <div class = "input-field">
           <%= f.text_field :username, type: "text", class: "validate center-align" %>
