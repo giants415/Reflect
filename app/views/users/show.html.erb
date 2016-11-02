@@ -30,7 +30,7 @@
     <div class = "col l10 m10 s10">
       <% @posts.each do |post| %>
       <p><%= post.title %></p>
-      <span><%= post.content %></span>
+      <span><%= simple_format(post.content) %></span>
       <br><br>
       <%= button_to "Cloudify", cloud_path(:user_id => @user.id, :post_id => post.id), class: "waves-effect waves-light btn", method: :get%>
       <% end %>
