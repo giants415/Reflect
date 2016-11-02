@@ -1,11 +1,13 @@
-
-<%= form_for ([@user,@post]) do |f| %>
-  <div>
-    <%= f.text_field :title, placeholder: "Title your post" %>
+<div class = "container">
+  <div id="entry-window" class = "col l10 m10 s10">
+    <%= form_for ([@user,@post]) do |f| %>
+      <div>
+        <%= f.text_field :title, placeholder: "Title your entry", type: "text" %>
+      </div>
+      <div>
+        <%= f.text_area :content, placeholder: "Write your post here", style: "height: 500px;" %>
+      </div>
+      <%= f.submit "Submit"%>
+    <% end %>
   </div>
-  <div>
-    <p>Write your post here</p>
-    <%= f.text_area :content %>
-  </div>
-  <%= f.submit "Submit"%>
-<% end %>
+</div>
