@@ -12,6 +12,9 @@
     <div class = "col l4 m4 s4">
       <p>Number of Entries</p>
       <%= Post.count %>
+      <%= button_to new_user_post_path(:user_id => @user.id), method: :get, class: "fa fa-pencil" do %>
+        <i aria-hidden="true">Write a Reflection</i>
+      <% end %>
     </div>
     <div class = "col l4 m4 s4">
       <p>test test test<p>
