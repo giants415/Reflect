@@ -14,7 +14,9 @@
  *= require_self
  *= require jqcloud
  */
-
+@import url('https://fonts.googleapis.com/css?family=Marcellus+SC|Old+Standard+TT');
+$reflect: 'Old Standard TT', sans-serif;
+$AltFont: 'Marcellus', sans-serif;
 
   body {
    background-color: #75A1D0;
@@ -22,4 +24,9 @@
 
   nav, footer.page-footer  {
     background-color: #6b7a8f;
+  }
+
+  .brand-logo {
+    font-family: $reflect;
+    letter-spacing: 2px;
   }
