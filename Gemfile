@@ -52,5 +52,3 @@ gem 'materialize-sass'
 gem 'words_counted'
 
 gem 'jqcloud-rails'
-
-gem 'font-awesome-sass'
