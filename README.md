@@ -26,6 +26,8 @@ In the future, users will be able to enter a rating before and after finishing t
 
 * Better error messages
 
+* Dynamic Sizing for Word Cloud Background based upon the number of words in an entry
+
 
 ##Technologies
 1. Rails 5
@@ -112,7 +114,7 @@ end
 ---
 
 ####Home
-```html.erb
+```RHTML
 <%= link_to user_path(current_user.id), method: :get, class: "fa fa-home fa-2x" do %>
 	<i aria-hidden="true"></i>
 <% end %>
@@ -120,7 +122,7 @@ end
 
 ####Write a Reflection & Edit
 
-```html.erb
+```RHTML
 <%= button_to edit_user_path, method: "get", class: "fa fa-pencil-square-o" do %>
 	<i aria-hidden="true">Edit Profile</i>
 <% end %>

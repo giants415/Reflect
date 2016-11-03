@@ -5,7 +5,7 @@
     var word_array = <%= raw @posts.first.words_freq.to_json %> ;
     word_array = JSON.parse(word_array);
     $(function() {
-      $("#target").jQCloud(word_array);
+      $("#target").jQCloud(word_array, {width: 1000, height: 1000});
     });
   </script>
 </div>
