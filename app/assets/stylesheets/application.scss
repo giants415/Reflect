@@ -16,7 +16,7 @@
  */
 @import url('https://fonts.googleapis.com/css?family=Marcellus+SC|Old+Standard+TT');
 $reflect: 'Old Standard TT', sans-serif;
-$AltFont: 'Marcellus', sans-serif;
+$AltFont: 'Marcellus SC', sans-serif;
 
 body {
  background-color: #75A1D0;
@@ -29,4 +29,9 @@ nav, footer.page-footer  {
 .brand-logo {
   font-family: $reflect;
   letter-spacing: 2px;
+}
+
+.notice {
+  color: red;
+  font-family: $AltFont;
 }

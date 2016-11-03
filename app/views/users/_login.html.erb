@@ -2,7 +2,7 @@
   <h3>Log In</h3>
 
   <div>
-    <h2><%= flash[:error] %></h2>
+    <h3 class = "notice center-align"><%= flash[:error] %></h3>
   </div>
 
   <%= form_for @user, url: "/sessions", method: "post" do |f| %>
