@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  include SessionsHelper
+
+  before_action :logged_in?, only: [:index]
+  before_filter :validate_user, only: [:create, :show]
 
   def index
     @users = User.all
@@ -43,4 +47,10 @@ class UsersController < ApplicationController
     def user_id
       params[:id]
     end
+
+    def validate_user
+      redirect_to(signup_path) unless current_user == User.find_by_id(user_id)
+      flash[:notice] = "Please sign up or log in to begin reflecting"
+    end
+
 end
