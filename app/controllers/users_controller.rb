@@ -15,10 +15,11 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
       if @user.save
+        login(@user)
         redirect_to @user
       else
         flash[:error]= @user.errors.full_messages
-        redirect_to new_user_path
+        redirect_to root_path
       end
   end
 
@@ -49,7 +50,7 @@ class UsersController < ApplicationController
     end
 
     def validate_user
-      redirect_to(signup_path) unless current_user == User.find_by_id(user_id)
+      redirect_to(root_path) unless current_user == User.find_by_id(user_id)
       flash[:notice] = "Please sign up or log in to begin reflecting"
     end
 
