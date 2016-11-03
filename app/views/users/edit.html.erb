@@ -1,13 +1,22 @@
-<h3>Edit your profile</h3>
-
-<%= form_for @user do |f| %>
-  <div>
-    <span class="label label-default"></span><%= f.text_field :username, placeholder: "Choose a username" %>
+<div class = "container">
+  <div class = "row">
+    <h3 class = "center-align">Edit your profile</h3>
   </div>
-  <br>
-  <div>
-    <span class="label label-default"></span><%= f.text_field :email, placeholder: "Enter your email" %>
+  <div class = "row">
+    <div id= "edit-prof" class = "col l4 m4 s4 offset-l4 offset-m4 offset-s4 center-align">
+      <%= form_for @user do |f| %>
+        <div>
+          <%= f.text_field :username, type: "text", class: "center-align" %>
+          <label for="username">Username</label>
+        </div>
+        <br>
+        <div>
+          <%= f.text_field :email, type: "text", class: "center-align"%>
+          <label for="email">Email</label>
+        </div>
+        <br>
+        <div class="userSubmitButton"><%= f.submit "Submit"%></div>
+      <% end %>
+    </div>
   </div>
-  <br>
-  <div class="userSubmitButton"><%= f.submit "Submit"%></div>
-<% end %>
+</div>
