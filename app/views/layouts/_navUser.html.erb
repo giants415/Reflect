@@ -1,6 +1,13 @@
 <div class = "navbar-fixed">
   <nav class = "z-depth-2">
     <div class="nav-wrapper">
+      <ul id="nav-mobile" class="left">
+        <li>
+          <%= link_to user_path(current_user.id), method: :get, class: "fa fa-home fa-2x" do %>
+            <i aria-hidden="true"></i>
+          <% end %>
+        </li>
+      </ul>
       <a href="/" class="brand-logo center">Reflect</a>
       <ul id="nav-mobile" class="right">
         <li><%= link_to "Log Out", logout_path, class: "waves-effect waves-light btn" %></li>

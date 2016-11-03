@@ -14,4 +14,6 @@ Rails.application.routes.draw do
   post '/users', to: 'users#create'
 
   get 'users/:user_id/posts/:post_id/cloud', to: "cloud#index", as: "cloud"
+
+
 end
