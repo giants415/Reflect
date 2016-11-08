@@ -4,7 +4,7 @@
     <%= form_for ([@user,@post]) do |f| %>
       <div class="range-field">
         <%= f.label "Rate how you feel now" %>
-        <%= f.range_field :init_rating, in: 1..10%>
+        <%= f.range_field :init_rating, in: 1..10, step: '.1'%>
       </div>
       <div>
         <%= f.text_field :title, placeholder: "Title your entry", type: "text" %>
