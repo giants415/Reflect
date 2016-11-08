@@ -3,8 +3,16 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import url('https://fonts.googleapis.com/css?family=PT+Serif');
 
-.face-rating {
-  display: inline;
+div {
+  .fa-frown-o {
+    margin-right: 9.5em;
+  }
+  .fa-meh-o{
+    margin-right: 9.5em;
+  }
+  i {
+    margin: .3em 0;
+  }
 }
 
 #entry-window{

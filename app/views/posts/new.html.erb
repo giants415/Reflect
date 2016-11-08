@@ -4,7 +4,12 @@
     <%= form_for ([@user,@post]) do |f| %>
       <div class="range-field">
         <%= f.label "Rate how you feel now" %>
-        <%= f.range_field :init_rating, in: 1..10, step: '.1'%>
+        <%= f.range_field :init_rating, in: 0..10, step: '.1', value: 5%>
+      </div>
+      <div class = "col l10">
+        <i class="fa fa-frown-o fa-3x" aria-hidden="true"></i>
+        <i class="fa fa-meh-o fa-3x" aria-hidden="true"></i>
+        <i class="fa fa-smile-o fa-3x" aria-hidden="true"></i>
       </div>
       <div>
         <%= f.text_field :title, placeholder: "Title your entry", type: "text" %>
@@ -14,7 +19,12 @@
       </div>
       <div class="range-field">
         <%= f.label "Rate how you feel now, after completing your entry" %>
-        <%= f.range_field(:end_rating, in: 1..10)%>
+        <%= f.range_field :end_rating, in: 0..10, step: '.1', value: 5%>
+      </div>
+      <div class = "col l10">
+        <i class="fa fa-frown-o fa-3x" aria-hidden="true"></i>
+        <i class="fa fa-meh-o fa-3x" aria-hidden="true"></i>
+        <i class="fa fa-smile-o fa-3x" aria-hidden="true"></i>
       </div>
       <%= f.submit "Submit"%>
     <% end %>
