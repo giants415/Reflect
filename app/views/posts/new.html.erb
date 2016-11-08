@@ -1,6 +1,9 @@
 <div class = "container">
   <div id="entry-window" class = "col l10 m10 s10">
     <%= form_for ([@user,@post]) do |f| %>
+      <div class="range-field">
+        <%= f.range_field(:init_rating, in: 1..10)%>
+      </div>
       <div>
         <%= f.text_field :title, placeholder: "Title your entry", type: "text" %>
       </div>
