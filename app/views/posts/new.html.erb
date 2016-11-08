@@ -2,13 +2,18 @@
   <div id="entry-window" class = "col l10 m10 s10">
     <%= form_for ([@user,@post]) do |f| %>
       <div class="range-field">
-        <%= f.range_field(:init_rating, in: 1..10)%>
+        <%= f.label "Rate how you feel now" %>
+        <%= f.range_field :init_rating, in: 1..10%>
       </div>
       <div>
         <%= f.text_field :title, placeholder: "Title your entry", type: "text" %>
       </div>
       <div>
         <%= f.text_area :content, placeholder: "Write your post here", style: "height: 400px;" %>
+      </div>
+      <div class="range-field">
+        <%= f.label "Rate how you feel now, after completing your entry" %>
+        <%= f.range_field(:end_rating, in: 1..10)%>
       </div>
       <%= f.submit "Submit"%>
     <% end %>
