@@ -1,6 +1,6 @@
 <div class = "container">
   <div id="entry-window" class = "col l10 m10 s10">
-    <span>To begin Reflecting, rate your current mood and lock it in by checking the box. Title and write your entry. Finally, re-rate your mood now that you've had a chance to write about your feelings.</span>
+    <span id="reflect-how-to" class = "align-center">To begin Reflecting, rate your current mood and lock it in by checking the box. Title and write your entry. Finally, re-rate your mood now that you've had a chance to write about your feelings.</span>
     <%= form_for ([@user,@post]) do |f| %>
       <div class="range-field">
         <%= f.label "Rate how you feel now" %>
