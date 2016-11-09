@@ -1,6 +1,6 @@
 <div class = "container">
   <div id="entry-window" class = "col l10 m10 s10">
-    <span id="reflect-how-to" class = "align-center">To begin Reflecting, rate your current mood and lock it in by checking the box. Title and write your entry. Finally, re-rate your mood now that you've had a chance to write about your feelings.</span>
+    <!-- <span id="reflect-how-to" class = "align-center">To begin Reflecting, rate your current mood and lock it in by checking the box. Title and write your entry. Finally, re-rate your mood now that you've had a chance to write about your feelings.</span> -->
     <%= form_for ([@user,@post]) do |f| %>
       <div class="range-field">
         <%= f.label "Rate how you feel now" %>
@@ -11,6 +11,11 @@
         <i class="fa fa-meh-o fa-3x" aria-hidden="true"></i>
         <i class="fa fa-smile-o fa-3x" aria-hidden="true"></i>
       </div>
+      <!-- <p>
+        <input type="checkbox" id="init-check" />
+        <label for="init-check">Confirm Rating</label>
+      </p> -->
+      <!-- <span>Write Post Call To Action</span> -->
       <div>
         <%= f.text_field :title, placeholder: "Title your entry", type: "text" %>
       </div>
@@ -26,7 +31,11 @@
         <i class="fa fa-meh-o fa-3x" aria-hidden="true"></i>
         <i class="fa fa-smile-o fa-3x" aria-hidden="true"></i>
       </div>
-      <%= f.submit "Submit"%>
+      <!-- <p>
+        <input type="checkbox" id="end-check" />
+        <label for="end-check">Confirm Rating</label>
+      </p> -->
+      <%= f.submit "Submit", class: "btn" %>
     <% end %>
   </div>
 </div>
