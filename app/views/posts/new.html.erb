@@ -1,7 +1,7 @@
 <div class = "container">
-  <div class = "center-align">
+  <div class = "center-align" id="reflect-how-to">
     <h4>Reflecting 101</h4>
-    <span id="reflect-how-to">To begin Reflecting, use the slider to rate your current mood and then write your entry. After you've finished writing, re-rate your mood and submit your post.</span>
+    <span>To begin Reflecting, use the slider to rate your current mood and then write your entry. After you've finished writing, re-rate your mood and submit your post.</span>
   </div>
     <div id="entry-window" class = "col l10 m10 s10">
     <%= form_for ([@user,@post]) do |f| %>
@@ -9,7 +9,7 @@
         <%= f.label "Rate how you feel now" %>
         <%= f.range_field :init_rating, in: 0..10, step: '.1', value: 5%>
       </div>
-      <div class = "col l10">
+      <div class = "col l10 m10 s10">
         <i class="fa fa-frown-o fa-3x" aria-hidden="true"></i>
         <i class="fa fa-meh-o fa-3x" aria-hidden="true"></i>
         <i class="fa fa-smile-o fa-3x" aria-hidden="true"></i>
