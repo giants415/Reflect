@@ -10,8 +10,10 @@ div {
   .fa-meh-o{
     margin-right: 9.5em;
   }
-  i {
-    margin: .3em 0;
+
+  .btn {
+    margin-top: 1em;
+    margin-left: 57em;
   }
 }
 
@@ -20,12 +22,15 @@ div {
   margin-bottom: .25em;
 }
 
-.reflect-how-to {
-
+#reflect-how-to {
+ background-color: rgba(0, 0, 0, .3);
+ color: white;
+ padding: .5em;
+ border-radius: 5px
 }
 
 #entry-window{
-  margin-top: 2em;
+  margin-top: 1em;
   padding: 1em;
   border-radius: 0 5px 5px 0;
   background-image: url("http://i.imgur.com/WqWdCYs.png");
