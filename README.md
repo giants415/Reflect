@@ -99,7 +99,7 @@ end
 
 ####Word Cloud
 ```javascript
-<div id= "target" class = "align-center" style="width: 750px; height: 750px;"></div>
+<div id= "target" class = "center-align" style="width: 750px; height: 750px;"></div>
 
 <script type = "text/javascript">
 	var word_array = <%= raw @posts.first.words_freq.to_json %> ;

@@ -14,8 +14,8 @@
       <% end %>
     </div>
     <div class = "col l4 m4 s4">
-      <!-- <p>Average Pre-Entry Rating: <p>
-      <p>Average Post-Entry Rating: <p> -->
+      <p>Average Pre-Entry Rating: <%= @user.posts.average(:init_rating) %> <p>
+      <p>Average Post-Entry Rating: <%= @user.posts.average(:end_rating) %>  <p>
     </div>
   </div>
 
@@ -28,6 +28,8 @@
     <div class = "col l10 m10 s10">
       <% @posts.each do |post| %>
       <h5><%= post.title %></h5>
+      <p>Before Reflection Rating: <%= post.init_rating %></p>
+      <p>After Reflection Rating: <%= post.end_rating %></p>
       <span><%= simple_format(post.content) %></span>
       <br><br>
       <%= button_to "Cloudify", cloud_path(:user_id => @user.id, :post_id => post.id), class: "waves-effect waves-light btn", method: :get%>
